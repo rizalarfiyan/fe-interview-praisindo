@@ -1,18 +1,18 @@
 {
-  "name": "frontend-praisindo",
+  "name": "fe-interview-praisindo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "description": "Interview Question Praisindo",
+  "description": "Frontend Interview Praisindo",
   "author": "Rizal Arfiyan <rizal.arfiyan.23@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/rizalarfiyan/frontend-praisindo#readme",
+  "homepage": "https://github.com/rizalarfiyan/fe-interview-praisindo#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rizalarfiyan/frontend-praisindo.git"
+    "url": "git+https://github.com/rizalarfiyan/fe-interview-praisindo.git"
   },
   "bugs": {
-    "url": "https://github.com/rizalarfiyan/frontend-praisindo/issues"
+    "url": "https://github.com/rizalarfiyan/fe-interview-praisindo/issues"
   },
   "scripts": {
     "dev": "vite",
