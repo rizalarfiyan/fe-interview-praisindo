@@ -1,8 +1,10 @@
 function App() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <div className='container'>
+      <div className='min-h-screen w-full h-full flex items-center justify-center'>
+        <h1 className='font-semibold text-4xl'>Hello Rizal!</h1>
+      </div>
+    </div>
   )
 }
 
