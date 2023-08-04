@@ -65,6 +65,10 @@ module.exports = {
           ['^.+\\.(gif|jpe?g|tiff?|png|webp|bmp)$'],
           // css files
           ['^.+\\.css$'],
+          // jsx
+          ['^@/Providers', '^@/Components', '^@/Layouts', '^@/Pages'],
+          // utils
+          ['^@/utils'],
           // relative paths up until 3 level
           [
             '^\\./?$',
