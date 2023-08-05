@@ -24,11 +24,37 @@ const router = createBrowserRouter([
       },
       {
         path: 'products',
-        element: <Products />,
+        children: [
+          {
+            path: '',
+            element: <Products />,
+          },
+          {
+            path: 'bonds',
+            element: <Products />,
+          },
+          {
+            path: 'stocks',
+            element: <Products />,
+          },
+        ],
       },
       {
         path: 'transaction',
-        element: <Transaction />,
+        children: [
+          {
+            path: '',
+            element: <Transaction />,
+          },
+          {
+            path: 'bonds',
+            element: <Transaction />,
+          },
+          {
+            path: 'stocks',
+            element: <Transaction />,
+          },
+        ],
       },
       {
         path: 'portfolio',

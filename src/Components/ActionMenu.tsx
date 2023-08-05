@@ -29,7 +29,9 @@ const ActionMenu: React.FC<ActionMenuProps> = (props) => {
         const length = actions.length
         const isCenter = length % 2 === 1 && Math.floor(length / 2) === idx
         const icon = <val.icon className='mx-auto h-7 w-7' />
-        const isActive = location.pathname === val.to
+        const isActive =
+          location.pathname.startsWith(val.to) &&
+          (val.to !== '/' || location.pathname === val.to)
         return (
           <Link
             to={val.to}
