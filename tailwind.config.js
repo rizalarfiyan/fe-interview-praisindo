@@ -27,10 +27,28 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
+        compass: {
+          '0%': {
+            transform: 'rotate(0deg)',
+          },
+          '25%': {
+            transform: 'rotate(60deg)',
+          },
+          '50%': {
+            transform: 'rotate(-80deg)',
+          },
+          '75%': {
+            transform: 'rotate(160deg)',
+          },
+          '100%': {
+            transform: 'rotate(-180deg)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        compass: 'compass 4s infinite',
       },
     },
   },
