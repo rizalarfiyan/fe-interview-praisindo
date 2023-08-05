@@ -8,7 +8,7 @@ import { Button } from '@/Components/ui/button'
 const Accounts: React.FC = () => {
   return (
     <>
-      <Header title='Account' hasBack>
+      <Header title='Account' hasBack hasBorder>
         <Button
           asChild
           variant='ghost'
