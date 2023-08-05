@@ -66,7 +66,10 @@ module.exports = {
           // css files
           ['^.+\\.css$'],
           // jsx
-          ['^@/Providers', '^@/Components', '^@/Layouts', '^@/Pages'],
+          ['^@/Providers'],
+          ['^@/Components'],
+          ['^@/Layouts'],
+          ['^@/Pages'],
           // utils
           ['^@/utils'],
           // relative paths up until 3 level

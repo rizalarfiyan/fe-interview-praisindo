@@ -1,23 +1,29 @@
 import { createBrowserRouter } from 'react-router-dom'
 
+import AppLayout from '@/Layouts/AppLayout'
+import CenterLayout from '@/Layouts/CenterLayout'
+
 import Home from '@/Pages/Home'
 import Login from '@/Pages/Login'
 import NotFound from '@/Pages/NotFound'
 import Working from '@/Pages/Working'
 
-import BaseCenter from './Layouts/BaseCenter'
-
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Home />,
+    element: <AppLayout />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+    ],
   },
   {
     path: 'login',
     element: <Login />,
   },
   {
-    element: <BaseCenter />,
+    element: <CenterLayout />,
     children: [
       {
         path: 'working',
