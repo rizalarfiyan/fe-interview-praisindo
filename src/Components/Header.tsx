@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   }
 
   return (
-    <div className='fixed right-0 top-0 flex w-full items-center'>
+    <div className='fixed right-0 top-0 z-50 flex w-full items-center'>
       <div
         className={cn(
           'mx-auto flex w-full max-w-xl items-center justify-between bg-white px-4 py-2',

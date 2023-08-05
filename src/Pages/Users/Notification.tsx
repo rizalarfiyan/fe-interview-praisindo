@@ -252,7 +252,7 @@ const Notification: React.FC = () => {
           </Link>
         </Button>
       </Header>
-      <main className='mt-16'>
+      <main className='mt-20'>
         <div className='mb-6 flex flex-col gap-2'>
           {notificationsData.map((val, idx) => {
             const status = getStatusByType(val.type)

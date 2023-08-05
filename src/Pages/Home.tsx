@@ -7,7 +7,7 @@ import { Button } from '@/Components/ui/button'
 
 const Home: React.FC = () => {
   return (
-    <header className='fixed right-0 top-0 flex w-full items-center'>
+    <header className='fixed right-0 top-0 z-50 flex w-full items-center'>
       <nav className='mx-auto flex w-full max-w-xl items-center justify-end gap-1 bg-violet-700 px-3 py-1 text-white'>
         <Button variant='fill-primary' className='p-3'>
           <Link to='/working'>
