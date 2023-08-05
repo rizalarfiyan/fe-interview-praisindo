@@ -1,3 +1,4 @@
+import { AvatarImage } from '@radix-ui/react-avatar'
 import {
   ArrowRightLeft,
   Bell,
@@ -10,7 +11,7 @@ import {
 } from 'lucide-react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/Components/ui/avatar'
+import { Avatar, AvatarFallback } from '@/Components/ui/avatar'
 import { Badge } from '@/Components/ui/badge'
 import { Button } from '@/Components/ui/button'
 
@@ -62,7 +63,7 @@ const AppLayout: React.FC = () => {
             </Link>
           </Button>
           <Button variant='fill-primary' className='relative p-3'>
-            <Link to='/working'>
+            <Link to='/user/notification'>
               <Bell />
               <Badge
                 variant='destructive'
@@ -73,10 +74,10 @@ const AppLayout: React.FC = () => {
               </Badge>
             </Link>
           </Button>
-          <Link to='/working' className='px-2'>
+          <Link to='/user' className='px-2'>
             <Avatar>
               <AvatarImage src='https://www.gravatar.com/avatar/ad777d13435f434d85e77a317d5536d2' />
-              <AvatarFallback>MR</AvatarFallback>
+              <AvatarFallback className='bg-violet-600'>MR</AvatarFallback>
             </Avatar>
           </Link>
         </nav>

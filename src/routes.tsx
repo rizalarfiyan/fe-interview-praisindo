@@ -2,10 +2,16 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import AppLayout from '@/Layouts/AppLayout'
 import CenterLayout from '@/Layouts/CenterLayout'
+import UserLayout from '@/Layouts/UserLayout'
 
 import Home from '@/Pages/Home'
 import Login from '@/Pages/Login'
 import NotFound from '@/Pages/NotFound'
+import Portfolio from '@/Pages/Portfolio'
+import Products from '@/Pages/Products'
+import Transaction from '@/Pages/Transaction'
+import Accounts from '@/Pages/Users/Accounts'
+import Notification from '@/Pages/Users/Notification'
 import Working from '@/Pages/Working'
 
 const router = createBrowserRouter([
@@ -13,8 +19,34 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        path: '/',
+        path: '',
         element: <Home />,
+      },
+      {
+        path: 'products',
+        element: <Products />,
+      },
+      {
+        path: 'transaction',
+        element: <Transaction />,
+      },
+      {
+        path: 'portfolio',
+        element: <Portfolio />,
+      },
+    ],
+  },
+  {
+    element: <UserLayout />,
+    path: 'user',
+    children: [
+      {
+        path: '',
+        element: <Accounts />,
+      },
+      {
+        path: 'notification',
+        element: <Notification />,
       },
     ],
   },
