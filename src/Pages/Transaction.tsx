@@ -1,6 +1,7 @@
 import { Search } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+import ActionFilter from '@/Components/ActionFilter'
 import Header from '@/Components/Header'
 import HeaderSecondary from '@/Components/HeaderSecondary'
 import { Button } from '@/Components/ui/button'
@@ -20,6 +21,18 @@ const linkHeader = [
   },
 ]
 
+const dataAction = [
+  {
+    title: 'All Transaction',
+  },
+  {
+    title: 'All Status',
+  },
+  {
+    title: 'All Pending',
+  },
+]
+
 const Transaction: React.FC = () => {
   return (
     <>
@@ -36,8 +49,8 @@ const Transaction: React.FC = () => {
         </Button>
       </Header>
       <HeaderSecondary linkHeader={linkHeader} />
-      <main className='flex h-full min-h-screen w-full items-center justify-center'>
-        <h1 className='text-4xl font-semibold'>Transaction</h1>
+      <main className='pt-32'>
+        <ActionFilter action={dataAction} />
       </main>
     </>
   )
