@@ -1,5 +1,18 @@
-import { ArrowRightLeft, Home, Leaf, PieChart, Plus } from 'lucide-react'
+import {
+  ArrowRightLeft,
+  Bell,
+  Home,
+  Leaf,
+  PieChart,
+  Plus,
+  Search,
+  Star,
+} from 'lucide-react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/Components/ui/avatar'
+import { Badge } from '@/Components/ui/badge'
+import { Button } from '@/Components/ui/button'
 
 import { cn } from '@/utils'
 
@@ -37,8 +50,35 @@ const AppLayout: React.FC = () => {
   return (
     <>
       <header className='fixed right-0 top-0 flex w-full items-center'>
-        <nav className='mx-auto flex w-full max-w-xl items-center justify-between bg-violet-700 text-white'>
-          header
+        <nav className='mx-auto flex w-full max-w-xl items-center justify-end gap-1 bg-violet-700 px-3 py-1 text-white'>
+          <Button variant='fill-primary' className='p-3'>
+            <Link to='/working'>
+              <Search />
+            </Link>
+          </Button>
+          <Button variant='fill-primary' className='p-3'>
+            <Link to='/working'>
+              <Star />
+            </Link>
+          </Button>
+          <Button variant='fill-primary' className='relative p-3'>
+            <Link to='/working'>
+              <Bell />
+              <Badge
+                variant='destructive'
+                size='sm'
+                className='absolute right-0 top-0'
+              >
+                9+
+              </Badge>
+            </Link>
+          </Button>
+          <Link to='/working' className='px-2'>
+            <Avatar>
+              <AvatarImage src='https://www.gravatar.com/avatar/ad777d13435f434d85e77a317d5536d2' />
+              <AvatarFallback>MR</AvatarFallback>
+            </Avatar>
+          </Link>
         </nav>
       </header>
       <main>
@@ -62,7 +102,7 @@ const AppLayout: React.FC = () => {
                 )}
               >
                 {isCenter ? (
-                  <div className='inline-flex h-14 w-14 items-center justify-center rounded-full bg-violet-700 text-white'>
+                  <div className='inline-flex h-14 w-14 items-center justify-center rounded-full bg-violet-700 text-white transition-all duration-200 ease-in-out hover:rotate-180 hover:bg-violet-800'>
                     {icon}
                   </div>
                 ) : (
