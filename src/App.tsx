@@ -6,7 +6,9 @@ import router from './routes'
 function App() {
   return (
     <Suspense>
-      <RouterProvider router={router} />
+      <div className='container max-w-xl overflow-y-auto overflow-x-hidden bg-slate-50'>
+        <RouterProvider router={router} />
+      </div>
     </Suspense>
   )
 }
