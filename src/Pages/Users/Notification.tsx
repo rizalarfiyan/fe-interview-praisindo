@@ -256,11 +256,11 @@ const Notification: React.FC = () => {
         <div className='mb-6 flex flex-col gap-2'>
           {notificationsData.map((val, idx) => {
             const status = getStatusByType(val.type)
+            //! FIXME child hr
             return (
-              <>
+              <div key={idx} className='space-y-2'>
                 <Link
                   to='/working'
-                  key={idx}
                   className={cn(
                     'flex w-full items-center gap-4 rounded-md px-4 py-2 transition-colors duration-300 hover:bg-slate-100',
                     val.isNew && 'bg-slate-100',
@@ -288,7 +288,7 @@ const Notification: React.FC = () => {
                 {notificationsData.length - 1 !== idx && (
                   <hr className='h-px border-0 bg-slate-200' />
                 )}
-              </>
+              </div>
             )
           })}
         </div>
