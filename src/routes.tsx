@@ -5,6 +5,8 @@ import Login from '@/Pages/Login'
 import NotFound from '@/Pages/NotFound'
 import Working from '@/Pages/Working'
 
+import BaseCenter from './Layouts/BaseCenter'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -15,12 +17,17 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: 'working',
-    element: <Working />,
-  },
-  {
-    path: '*',
-    element: <NotFound />,
+    element: <BaseCenter />,
+    children: [
+      {
+        path: 'working',
+        element: <Working />,
+      },
+      {
+        path: '*',
+        element: <NotFound />,
+      },
+    ],
   },
 ])
 
