@@ -170,7 +170,7 @@ const Home: React.FC = () => {
                 className='h-auto w-24 p-3'
               >
                 <Link to='/working'>
-                  <div className='space-y-2'>
+                  <div className='space-y-2 text-center'>
                     <action.icon className='mx-auto' />
                     <span className='block leading-tight'>{action.name}</span>
                   </div>
