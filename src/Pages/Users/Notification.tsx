@@ -256,7 +256,6 @@ const Notification: React.FC = () => {
         <div className='mb-6 flex flex-col gap-2'>
           {notificationsData.map((val, idx) => {
             const status = getStatusByType(val.type)
-            //! FIXME child hr
             return (
               <div key={idx} className='space-y-2'>
                 <Link
