@@ -17,10 +17,18 @@ const badgeVariants = cva(
         outline: 'text-slate-950 dark:text-slate-50',
         primary:
           'border-transparent bg-violet-500 text-slate-50 hover:bg-violet-500/80 dark:bg-violet-900 dark:text-violet-50 dark:hover:bg-violet-900/80',
+        success:
+          'border-transparent bg-green-100 text-green-500 hover:bg-green-500/80 dark:bg-green-900 dark:text-green-50 dark:hover:bg-green-900/80',
+        danger:
+          'border-transparent bg-red-100 text-red-500 hover:bg-red-500/80 dark:bg-red-900 dark:text-red-50 dark:hover:bg-red-900/80',
+        info: 'border-transparent bg-blue-100 text-blue-500 hover:bg-blue-500/80 dark:bg-blue-900 dark:text-blue-50 dark:hover:bg-blue-900/80',
+        warning:
+          'border-transparent bg-yellow-100 text-yellow-500 hover:bg-yellow-500/80 dark:bg-yellow-900 dark:text-yellow-50 dark:hover:bg-yellow-900/80',
       },
       size: {
         default: '',
         sm: 'py-0 px-1.5',
+        lg: 'py-1 px-3',
       },
     },
     defaultVariants: {

@@ -52,7 +52,7 @@ interface ProductItems {
   type: string
   risk_tolerance: string
   minimum_investment: number
-  prize: number
+  price: number
   is_up: boolean
   percentage: number
 }
@@ -64,7 +64,7 @@ const dataProducts: ProductItems[] = [
     type: 'Money Market',
     risk_tolerance: 'Conservative',
     minimum_investment: 1000000,
-    prize: 2326323.0,
+    price: 2326323.0,
     is_up: true,
     percentage: 0.5,
   },
@@ -74,7 +74,7 @@ const dataProducts: ProductItems[] = [
     type: 'Money Market',
     risk_tolerance: 'Conservative',
     minimum_investment: 1000000,
-    prize: 23626323.0,
+    price: 23626323.0,
     is_up: true,
     percentage: 0.5,
   },
@@ -84,7 +84,7 @@ const dataProducts: ProductItems[] = [
     type: 'Money Market',
     risk_tolerance: 'Conservative',
     minimum_investment: 1000000,
-    prize: 23626323.0,
+    price: 23626323.0,
     is_up: true,
     percentage: 0.5,
   },
@@ -94,7 +94,7 @@ const dataProducts: ProductItems[] = [
     type: 'Money Market',
     risk_tolerance: 'Conservative',
     minimum_investment: 1000000,
-    prize: 23626323.0,
+    price: 23626323.0,
     is_up: true,
     percentage: 0.5,
   },
@@ -104,7 +104,7 @@ const dataProducts: ProductItems[] = [
     type: 'Money Market',
     risk_tolerance: 'Conservative',
     minimum_investment: 1000000,
-    prize: 23626323.0,
+    price: 23626323.0,
     is_up: true,
     percentage: 0.5,
   },
@@ -114,7 +114,7 @@ const dataProducts: ProductItems[] = [
     type: 'Money Market',
     risk_tolerance: 'Conservative',
     minimum_investment: 1000000,
-    prize: 23626323.0,
+    price: 23626323.0,
     is_up: true,
     percentage: 0.5,
   },
@@ -179,7 +179,7 @@ const Products: React.FC = () => {
                   <div className='text-center'>
                     <h3 className='text-sm text-slate-500'>Price</h3>
                     <span className='font-semibold'>
-                      {formatCurrency(val.prize)}
+                      {formatCurrency(val.price)}
                     </span>
                   </div>
                   <div className='text-right'>

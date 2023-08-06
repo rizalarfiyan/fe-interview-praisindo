@@ -196,7 +196,7 @@ const notificationsData: NotificationItem[] = [
   },
 ]
 
-const getStatusByType = (type: NotificationType) => {
+const getTypeNotification = (type: NotificationType) => {
   switch (type) {
     case 'payment_received':
       return {
@@ -255,7 +255,7 @@ const Notification: React.FC = () => {
       <main className='mt-20'>
         <div className='mb-6 flex flex-col gap-2'>
           {notificationsData.map((val, idx) => {
-            const status = getStatusByType(val.type)
+            const type = getTypeNotification(val.type)
             return (
               <div key={idx} className='space-y-2'>
                 <Link
@@ -265,9 +265,9 @@ const Notification: React.FC = () => {
                     val.isNew && 'bg-slate-100',
                   )}
                 >
-                  {status.icon}
+                  {type.icon}
                   <div className='flex flex-grow flex-col'>
-                    <h2 className='text-lg font-semibold'>{status.title}</h2>
+                    <h2 className='text-lg font-semibold'>{type.title}</h2>
                     <p className='text-slate-500'>{val.message}</p>
                     <span className='text-sm text-slate-400'>
                       {formatDate(val.datetime)}
