@@ -13,10 +13,11 @@ interface ActionFilterItem {
 
 interface ActionFilterProps {
   action: ActionFilterItem[]
+  defaultIcon?: boolean
 }
 
 const ActionFilter: React.FC<ActionFilterProps> = (props) => {
-  const { action } = props
+  const { action, defaultIcon } = props
 
   return (
     <ScrollArea className='pb-4'>
@@ -38,7 +39,9 @@ const ActionFilter: React.FC<ActionFilterProps> = (props) => {
               >
                 {data?.icon && <data.icon width={16} height={16} />}
                 <span>{data.title}</span>
-                {!data?.icon && <ChevronDown width={16} height={16} />}
+                {!data?.icon && defaultIcon && (
+                  <ChevronDown width={16} height={16} />
+                )}
               </Link>
             </Button>
           )

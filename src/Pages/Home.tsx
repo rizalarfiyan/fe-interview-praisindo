@@ -11,9 +11,12 @@ import {
   Search,
   Sprout,
   Star,
+  TrendingDown,
+  TrendingUp,
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
+import ActionFilter from '@/Components/ActionFilter'
 import { Avatar, AvatarFallback, AvatarImage } from '@/Components/ui/avatar'
 import { Badge } from '@/Components/ui/badge'
 import { Button } from '@/Components/ui/button'
@@ -110,6 +113,68 @@ const latestNews = [
   },
 ]
 
+const dataAction = [
+  {
+    title: 'Model Portfolios',
+  },
+  {
+    title: 'Mutual Funds',
+  },
+  {
+    title: 'Bonds',
+  },
+  {
+    title: 'Model Portfolios',
+  },
+  {
+    title: 'Mutual Funds',
+  },
+  {
+    title: 'Bonds',
+  },
+]
+
+interface HomeListItem {
+  title: string
+  category: string
+  is_up: boolean
+  percentage: number
+}
+
+const homeLists: HomeListItem[] = [
+  {
+    title:
+      'Model Aman ketika Pandemi Model Aman ketika Pandemi Model Aman ketika Pandemi Model Aman ketika Pandemi',
+    category: 'Investor',
+    is_up: true,
+    percentage: 4.5,
+  },
+  {
+    title: 'Model Aman ketika Pandemi',
+    category: 'Investor',
+    is_up: false,
+    percentage: 4.5,
+  },
+  {
+    title: 'Model Aman ketika Pandemi',
+    category: 'Investor',
+    is_up: true,
+    percentage: 4.5,
+  },
+  {
+    title: 'Model Aman ketika Pandemi',
+    category: 'Investor',
+    is_up: true,
+    percentage: 4.5,
+  },
+  {
+    title: 'Model Aman ketika Pandemi',
+    category: 'Investor',
+    is_up: true,
+    percentage: 4.5,
+  },
+]
+
 const Home: React.FC = () => {
   return (
     <>
@@ -178,6 +243,53 @@ const Home: React.FC = () => {
               </Button>
             )
           })}
+        </div>
+        <div className='space-y-2'>
+          <div className='flex items-center justify-between'>
+            <h1 className='text-2xl font-semibold'>Top 5 List</h1>
+          </div>
+          <ActionFilter action={dataAction} />
+          <div className='mb-6 flex flex-col gap-2 rounded-md bg-white p-4 shadow-md'>
+            {homeLists.map((val, idx) => {
+              return (
+                <div key={idx} className='space-y-2'>
+                  <Link
+                    to='/working'
+                    className='flex w-full items-center gap-4 rounded-md p-4 transition-colors duration-300 hover:bg-slate-100'
+                  >
+                    <div>
+                      {val.is_up ? (
+                        <TrendingUp className='text-green-600' />
+                      ) : (
+                        <TrendingDown className='text-red-600' />
+                      )}
+                    </div>
+                    <div className='flex flex-grow flex-col'>
+                      <h2 className='line-clamp-2 text-lg font-semibold leading-tight'>
+                        {val.title}
+                      </h2>
+                      <p className='text-slate-500'>{val.category}</p>
+                    </div>
+                    <div className='flex items-center'>
+                      <Badge
+                        variant={val.is_up ? 'success' : 'danger'}
+                        className='flex items-center gap-1 px-4 py-2'
+                      >
+                        <span className='flex items-center gap-1 font-bold'>
+                          <UpDownIcon isUp={val.is_up} className='h-5 w-5' />
+                          {val.percentage}%
+                        </span>
+                        <span>1Y</span>
+                      </Badge>
+                    </div>
+                  </Link>
+                  {homeLists.length - 1 !== idx && (
+                    <hr className='h-px border-0 bg-slate-200' />
+                  )}
+                </div>
+              )
+            })}
+          </div>
         </div>
         <div className='space-y-2'>
           <div className='flex items-center justify-between'>

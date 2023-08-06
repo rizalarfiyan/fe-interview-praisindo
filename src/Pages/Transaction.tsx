@@ -184,7 +184,7 @@ const Transaction: React.FC = () => {
       </Header>
       <HeaderSecondary linkHeader={linkHeader} />
       <main className='space-y-4 pb-28 pt-32'>
-        <ActionFilter action={dataAction} />
+        <ActionFilter defaultIcon action={dataAction} />
         <div className='flex flex-col items-center gap-4'>
           {dataTransaction.map((val, idx) => {
             const type = getTypeTransaction(val.type)
