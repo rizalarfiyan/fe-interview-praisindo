@@ -151,7 +151,23 @@ const Portfolio: React.FC = () => {
           </Button>
         </div>
       </Header>
-      <main className='space-y-4 pb-28 pt-32'>
+
+      <div className='fixed right-0 top-14 z-50 flex w-full items-center'>
+        <div className='mx-auto flex w-full max-w-xl flex-col border-b border-slate-200 bg-white px-4 pb-4 pt-2'>
+          <span className='font-medium'>Total Balance</span>
+          <h1 className='text-3xl font-semibold'>
+            {formatCurrency(1315800662.31)}
+          </h1>
+          <div className='mt-2 flex items-center gap-1 text-green-600'>
+            <UpDownIcon className='h-5 w-5' isUp />
+            <span className='font-medium'>
+              {formatCurrency(243489330)} (+14.37%)
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <main className='space-y-4 pb-28 pt-48'>
         <ActionFilter action={dataAction} />
         <div className='flex flex-col items-center gap-4'>
           {dataPortfolio.map((val, idx) => {
@@ -192,7 +208,7 @@ const Portfolio: React.FC = () => {
                     <div
                       className={cn(
                         'flex items-center justify-end gap-1',
-                        val.is_up ? 'text-green-500' : 'text-red-500',
+                        val.is_up ? 'text-green-600' : 'text-red-600',
                       )}
                     >
                       <UpDownIcon className='h-5 w-5' isUp={val.is_up} />

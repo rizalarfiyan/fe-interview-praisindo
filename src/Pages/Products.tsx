@@ -187,7 +187,7 @@ const Products: React.FC = () => {
                     <div
                       className={cn(
                         'flex items-center justify-end gap-1',
-                        val.is_up ? 'text-green-500' : 'text-red-500',
+                        val.is_up ? 'text-green-600' : 'text-red-600',
                       )}
                     >
                       <UpDownIcon className='h-5 w-5' isUp={val.is_up} />
