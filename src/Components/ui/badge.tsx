@@ -18,12 +18,12 @@ const badgeVariants = cva(
         primary:
           'border-transparent bg-violet-500 text-slate-50 hover:bg-violet-500/80 dark:bg-violet-900 dark:text-violet-50 dark:hover:bg-violet-900/80',
         success:
-          'border-transparent bg-green-100 text-green-500 hover:bg-green-200 dark:bg-green-900 dark:text-green-50 dark:hover:bg-green-900/80',
+          'border-transparent bg-green-50 text-green-600 hover:bg-green-200 dark:bg-green-900 dark:text-green-50 dark:hover:bg-green-900/80',
         danger:
-          'border-transparent bg-red-100 text-red-500 hover:bg-red-200 dark:bg-red-900 dark:text-red-50 dark:hover:bg-red-900/80',
-        info: 'border-transparent bg-blue-100 text-blue-500 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-50 dark:hover:bg-blue-900/80',
+          'border-transparent bg-red-50 text-red-600 hover:bg-red-200 dark:bg-red-900 dark:text-red-50 dark:hover:bg-red-900/80',
+        info: 'border-transparent bg-blue-50 text-blue-600 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-50 dark:hover:bg-blue-900/80',
         warning:
-          'border-transparent bg-yellow-100 text-yellow-500 hover:bg-yellow-200 dark:bg-yellow-900 dark:text-yellow-50 dark:hover:bg-yellow-900/80',
+          'border-transparent bg-yellow-50 text-yellow-600 hover:bg-yellow-200 dark:bg-yellow-900 dark:text-yellow-50 dark:hover:bg-yellow-900/80',
       },
       size: {
         default: '',
