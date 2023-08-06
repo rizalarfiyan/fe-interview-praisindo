@@ -28,9 +28,7 @@ const Login: React.FC = () => {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-  }
+  function onSubmit() {}
 
   return (
     <div className='min-h-screen w-full'>
