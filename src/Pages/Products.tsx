@@ -44,6 +44,30 @@ const dataAction = [
     title: 'Compare',
     icon: Layers,
   },
+  {
+    title: 'Filter',
+    icon: SlidersHorizontal,
+  },
+  {
+    title: 'Sort',
+    icon: ArrowDownUp,
+  },
+  {
+    title: 'Compare',
+    icon: Layers,
+  },
+  {
+    title: 'Filter',
+    icon: SlidersHorizontal,
+  },
+  {
+    title: 'Sort',
+    icon: ArrowDownUp,
+  },
+  {
+    title: 'Compare',
+    icon: Layers,
+  },
 ]
 
 interface ProductItems {

@@ -115,17 +115,17 @@ const Home: React.FC = () => {
     <>
       <header className='fixed right-0 top-0 z-50 flex w-full items-center'>
         <nav className='mx-auto flex w-full max-w-xl items-center justify-end gap-1 bg-violet-700 px-3 py-2 text-white'>
-          <Button variant='fill-primary' className='p-3'>
+          <Button asChild variant='fill-primary' className='p-3'>
             <Link to='/working'>
               <Search />
             </Link>
           </Button>
-          <Button variant='fill-primary' className='p-3'>
+          <Button asChild variant='fill-primary' className='p-3'>
             <Link to='/working'>
               <Star />
             </Link>
           </Button>
-          <Button variant='fill-primary' className='relative p-3'>
+          <Button asChild variant='fill-primary' className='relative p-3'>
             <Link to='/user/notification'>
               <Bell />
               <Badge
@@ -161,16 +161,21 @@ const Home: React.FC = () => {
       </div>
       <main className='relative z-30 space-y-6 pb-24 pt-52'>
         <div className='flex flex-wrap items-start justify-evenly gap-3 rounded-lg bg-white p-6 shadow-lg'>
-          {homeActions.map((action) => {
+          {homeActions.map((action, idx) => {
             return (
-              <div>
-                <Button variant='ghost' className='h-auto w-24 p-3'>
-                  <Link to='/working' className='space-y-2'>
+              <Button
+                key={idx}
+                asChild
+                variant='ghost'
+                className='h-auto w-24 p-3'
+              >
+                <Link to='/working'>
+                  <div className='space-y-2'>
                     <action.icon className='mx-auto' />
                     <span className='block leading-tight'>{action.name}</span>
-                  </Link>
-                </Button>
-              </div>
+                  </div>
+                </Link>
+              </Button>
             )
           })}
         </div>
@@ -183,7 +188,7 @@ const Home: React.FC = () => {
           </div>
           <div>
             <ScrollArea className='pb-2'>
-              <div className='flex w-full whitespace-nowrap px-1'>
+              <div className='flex w-full whitespace-nowrap p-1'>
                 {investmentTips.map((val, idx) => {
                   return (
                     <Link
@@ -214,7 +219,7 @@ const Home: React.FC = () => {
           </div>
           <div>
             <ScrollArea className='pb-2'>
-              <div className='flex w-full whitespace-nowrap px-1'>
+              <div className='flex w-full whitespace-nowrap p-1'>
                 {latestNews.map((val, idx) => {
                   return (
                     <Link
