@@ -190,9 +190,10 @@ const Transaction: React.FC = () => {
             const type = getTypeTransaction(val.type)
             const status = getStatusTransaction(val.status)
             return (
-              <div
+              <Link
                 key={idx}
-                className='w-full space-y-4 rounded-md bg-white p-6 shadow-md'
+                to='/working'
+                className='w-full space-y-4 rounded-md border-2 border-transparent bg-white p-6 shadow-md transition-colors duration-300 hover:border-violet-600'
               >
                 <div className='flex w-full items-center gap-5'>
                   {type.icon}
@@ -233,7 +234,7 @@ const Transaction: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             )
           })}
         </div>

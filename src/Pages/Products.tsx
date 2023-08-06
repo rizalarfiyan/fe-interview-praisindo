@@ -141,9 +141,10 @@ const Products: React.FC = () => {
         <div className='flex flex-col items-center gap-4'>
           {dataProducts.map((val, idx) => {
             return (
-              <div
+              <Link
                 key={idx}
-                className='w-full space-y-4 rounded-md bg-white p-6 shadow-md'
+                to='/working'
+                className='w-full space-y-4 rounded-md border-2 border-transparent bg-white p-6 shadow-md transition-colors duration-300 hover:border-violet-600'
               >
                 <div className='flex items-center gap-6'>
                   <Avatar className='h-16 w-16 rounded-xl'>
@@ -195,7 +196,7 @@ const Products: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             )
           })}
         </div>

@@ -195,7 +195,7 @@ const Home: React.FC = () => {
                       to='/working'
                       key={idx}
                       className={cn(
-                        'mb-2 inline-flex w-44 flex-col space-y-2 rounded-lg border border-transparent bg-white p-4 shadow-md transition-all duration-300 hover:border-violet-600',
+                        'mb-2 inline-flex w-44 flex-col space-y-2 rounded-lg border-2 border-transparent bg-white p-4 shadow-md transition-all duration-300 hover:border-violet-600',
                         investmentTips.length - 1 !== idx && 'mr-3',
                       )}
                     >
