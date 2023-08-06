@@ -37,7 +37,7 @@ const AppLayout: React.FC = () => {
       <div className='h-full min-h-screen w-full'>
         <Outlet />
       </div>
-      <div className='fixed bottom-0 right-0 flex w-full items-center'>
+      <div className='fixed bottom-0 right-0 z-50 flex w-full items-center'>
         <ActionMenu actions={actionItems} />
       </div>
     </>

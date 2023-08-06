@@ -68,6 +68,48 @@ const investmentTips = [
   'Investment Tips',
 ]
 
+const latestNews = [
+  {
+    title: 'Blockchain Innovations Gain Traction in Global Payment Networks',
+    image: 'https://picsum.photos/300/300?random=1',
+  },
+  {
+    title:
+      'Robo-Advisors Surge as Investors Embrace AI-driven Financial Guidance',
+    image: 'https://picsum.photos/300/300?random=2',
+  },
+  {
+    title:
+      'Central Bank Digital Currencies (CBDCs) Spark Debate on Future of Money',
+    image: 'https://picsum.photos/300/300?random=3',
+  },
+  {
+    title:
+      'Fintech Startups Raise Record Funding in Q3 2023 Amidst Regulatory Changes',
+    image: 'https://picsum.photos/300/300?random=4',
+  },
+  {
+    title:
+      'Cryptocurrency Regulations Tighten, Impacting Market Sentiment and Trading Volumes',
+    image: 'https://picsum.photos/300/300?random=5',
+  },
+  {
+    title:
+      'Open Banking Revolution Continues: New API Standards Set for Secure Data Sharing',
+    image: 'https://picsum.photos/300/300?random=6',
+  },
+  {
+    title:
+      'Artificial Intelligence Reshapes Customer Service in Banking: Chatbots and Beyond',
+    image: 'https://picsum.photos/300/300?random=7',
+  },
+  {
+    title:
+      'Biometric Authentication Trends: Fingerprint and Facial Recognition Transform Payments',
+    image: 'https://picsum.photos/300/300?random=8',
+  },
+]
+
 const Home: React.FC = () => {
   return (
     <>
@@ -117,8 +159,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-      <main className='relative z-30 space-y-6 pb-20 pt-52'>
-        <div className='flex flex-wrap items-start justify-evenly gap-3 rounded-lg bg-white p-6'>
+      <main className='relative z-30 space-y-6 pb-24 pt-52'>
+        <div className='flex flex-wrap items-start justify-evenly gap-3 rounded-lg bg-white p-6 shadow-lg'>
           {homeActions.map((action) => {
             return (
               <div>
@@ -139,26 +181,61 @@ const Home: React.FC = () => {
               See More
             </Link>
           </div>
-
           <div>
             <ScrollArea className='pb-2'>
-              <div className='flex w-full whitespace-nowrap'>
+              <div className='flex w-full whitespace-nowrap px-1'>
                 {investmentTips.map((val, idx) => {
                   return (
-                    <div
+                    <Link
+                      to='/working'
                       key={idx}
                       className={cn(
-                        'mb-2 inline-flex w-44 flex-col space-y-2 rounded-lg bg-white p-4 shadow-md',
+                        'mb-2 inline-flex w-44 flex-col space-y-2 rounded-lg border border-transparent bg-white p-4 shadow-md transition-all duration-300 hover:border-violet-600',
                         investmentTips.length - 1 !== idx && 'mr-3',
                       )}
                     >
-                      <div>
-                        <Info className='text-violet-700' />
-                      </div>
+                      <Info className='text-violet-700' />
                       <div className='flex-grow whitespace-normal font-medium'>
                         {val}
                       </div>
-                    </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            </ScrollArea>
+          </div>
+        </div>
+        <div className='space-y-2'>
+          <div className='flex items-center justify-between'>
+            <h1 className='text-2xl font-semibold'>Latest News</h1>
+            <Link to='/working' className='font-medium text-violet-700'>
+              See More
+            </Link>
+          </div>
+          <div>
+            <ScrollArea className='pb-2'>
+              <div className='flex w-full whitespace-nowrap px-1'>
+                {latestNews.map((val, idx) => {
+                  return (
+                    <Link
+                      to='/working'
+                      key={idx}
+                      className={cn(
+                        'group mb-2 inline-flex w-44 flex-col space-y-2 overflow-hidden rounded-lg bg-white shadow-md',
+                        latestNews.length - 1 !== idx && 'mr-3',
+                      )}
+                    >
+                      <div className='aspect-[4/3] overflow-hidden object-cover'>
+                        <img
+                          className='transition-transform duration-300 ease-in-out group-hover:scale-125'
+                          src={val.image}
+                          alt={val.title}
+                        />
+                      </div>
+                      <div className='flex-grow whitespace-normal px-3 pb-3 font-medium transition-colors duration-200 group-hover:bg-slate-50'>
+                        <span className='line-clamp-3'>{val.title}</span>
+                      </div>
+                    </Link>
                   )
                 })}
               </div>
