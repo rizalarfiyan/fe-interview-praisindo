@@ -14,65 +14,73 @@ import Accounts from '@/Pages/Users/Accounts'
 import Notification from '@/Pages/Users/Notification'
 import Working from '@/Pages/Working'
 
+import AuthGuardLayout from './Layouts/AuthGuardLayout'
+
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    path: '',
+    element: <AuthGuardLayout />,
     children: [
       {
-        path: '',
-        element: <Home />,
-      },
-      {
-        path: 'products',
+        element: <AppLayout />,
         children: [
           {
             path: '',
-            element: <Products />,
+            element: <Home />,
           },
           {
-            path: 'bonds',
-            element: <Products />,
+            path: 'products',
+            children: [
+              {
+                path: '',
+                element: <Products />,
+              },
+              {
+                path: 'bonds',
+                element: <Products />,
+              },
+              {
+                path: 'stocks',
+                element: <Products />,
+              },
+            ],
           },
           {
-            path: 'stocks',
-            element: <Products />,
+            path: 'transaction',
+            children: [
+              {
+                path: '',
+                element: <Transaction />,
+              },
+              {
+                path: 'bonds',
+                element: <Transaction />,
+              },
+              {
+                path: 'stocks',
+                element: <Transaction />,
+              },
+            ],
+          },
+          {
+            path: 'portfolio',
+            element: <Portfolio />,
           },
         ],
       },
       {
-        path: 'transaction',
+        element: <UserLayout />,
+        path: 'user',
         children: [
           {
             path: '',
-            element: <Transaction />,
+            element: <Accounts />,
           },
           {
-            path: 'bonds',
-            element: <Transaction />,
-          },
-          {
-            path: 'stocks',
-            element: <Transaction />,
+            path: 'notification',
+            element: <Notification />,
           },
         ],
-      },
-      {
-        path: 'portfolio',
-        element: <Portfolio />,
-      },
-    ],
-  },
-  {
-    element: <UserLayout />,
-    path: 'user',
-    children: [
-      {
-        path: '',
-        element: <Accounts />,
-      },
-      {
-        path: 'notification',
-        element: <Notification />,
       },
     ],
   },

@@ -1,9 +1,14 @@
 import { CheckCircle2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { shallow } from 'zustand/shallow'
 
 import { Button } from '@/Components/ui/button'
 
+import useAuth from '@/stores/auth'
+
 const Working: React.FC = () => {
+  const [isAuthenticated] = useAuth((state) => [state.isAuthenticated], shallow)
+
   return (
     <div className='space-y-6 text-center'>
       <CheckCircle2
@@ -20,7 +25,7 @@ const Working: React.FC = () => {
         </p>
       </div>
       <Button asChild variant='outline' className='w-full max-w-sm'>
-        <Link to='/'>Back to Home</Link>
+        <Link to={isAuthenticated() ? '/' : '/login'}>Back to Home</Link>
       </Button>
     </div>
   )

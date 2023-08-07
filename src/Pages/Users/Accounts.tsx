@@ -1,13 +1,16 @@
 import { AvatarImage } from '@radix-ui/react-avatar'
 import { Bell, Camera, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { shallow } from 'zustand/shallow'
 
 import Header from '@/Components/Header'
 import { Avatar, AvatarFallback } from '@/Components/ui/avatar'
 import { Badge } from '@/Components/ui/badge'
 import { Button } from '@/Components/ui/button'
 import { Switch } from '@/Components/ui/switch'
+
+import useAuth from '@/stores/auth'
 
 interface AccountAction {
   title: string
@@ -34,6 +37,9 @@ const accountActions: AccountAction[] = [
       {
         title: 'Reveral ID',
         to: '/working',
+      },
+      {
+        title: 'Logout',
       },
     ],
   },
@@ -74,6 +80,15 @@ const AccountActionSwitch: React.FC<{
 }
 
 const Accounts: React.FC = () => {
+  const navigate = useNavigate()
+  const [logout] = useAuth((state) => [state.logout], shallow)
+
+  const handleLogout = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    logout()
+    navigate('/login')
+  }
+
   return (
     <>
       <Header title='Account' hasBack hasBorder>
@@ -127,6 +142,18 @@ const Accounts: React.FC = () => {
                           <span>{child.title}</span>
                           <ChevronRight />
                         </Link>
+                      )
+                    }
+
+                    if (child.title.toLocaleLowerCase() === 'logout') {
+                      return (
+                        <button
+                          key={idxChild}
+                          onClick={handleLogout}
+                          className='flex w-full items-center justify-between px-4 py-3 transition-colors duration-300 hover:bg-slate-100'
+                        >
+                          <span>{child.title}</span>
+                        </button>
                       )
                     }
 

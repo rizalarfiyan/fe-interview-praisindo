@@ -90,5 +90,6 @@ module.exports = {
     ],
     // Another rules
     'react-refresh/only-export-components': 'off',
+    'react-hooks/exhaustive-deps': 'off',
   },
 }

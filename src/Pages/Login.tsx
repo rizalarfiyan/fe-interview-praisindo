@@ -1,7 +1,9 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import * as z from 'zod'
+import { shallow } from 'zustand/shallow'
 
 import { Button } from '@/Components/ui/button'
 import {
@@ -13,6 +15,8 @@ import {
   FormMessage,
 } from '@/Components/ui/form'
 import { Input } from '@/Components/ui/input'
+
+import useAuth from '@/stores/auth'
 
 const formSchema = z.object({
   email: z.string().email(),
@@ -28,7 +32,19 @@ const Login: React.FC = () => {
     },
   })
 
-  function onSubmit() {}
+  const navigate = useNavigate()
+  const [login, auth] = useAuth((state) => [state.login, state.auth], shallow)
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    login(values.email)
+  }
+
+  useEffect(() => {
+    if (auth) {
+      navigate('/')
+    }
+  }, [auth])
+
+  if (auth) return null
 
   return (
     <div className='min-h-screen w-full'>
